@@ -48,23 +48,11 @@ public class Board {
         if (moveToCell.equals(this.FOOD_CELL))
             moveToCell.isFoodCell();
 
-//        if (this.FOOD_CELL.equals(moveToCell)) {
-//            moveToCell.isFoodCell();
-//            moveToCell.eatFood();
-//            this.FOOD_CELL = null;
-//        }
-
 
         if (!moveToCell.isFoodCell()) {
             Cell snakeTail = this.SNAKE.getTail();
             this.BOARD[snakeTail.getRow()][snakeTail.getColumn()].release();
         }
-
-//        else {
-//            moveToCell.isFoodCell();
-////            moveToCell.eatFood();
-////            this.FOOD_CELL = null;
-//        }
 
 
         boolean moveSuccessful;

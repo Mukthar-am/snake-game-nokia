@@ -16,10 +16,6 @@ public class Manager {
     private int BOARD_Y = 20;
 
 
-    private int point_x;
-    private int point_y;
-
-
     public static void main(String[] args) {
         new Manager().start();
     }
@@ -121,12 +117,12 @@ public class Manager {
                 break;
 
             default:
-                this.point_x += 1;
-                this.point_y += 1;
+                head_x++;
+                head_y++;
         }
 
         /** Return the next Cell as per the move chosen */
-        LOG.info("Now creating move-to-cell @ (" + head_x + ", " + head_y + ")");
+        LOG.info("Now creating move-to-cell @ ({}, {})",  head_x, head_y);
         return new Cell(head_x, head_y, true, false);
     }
 
