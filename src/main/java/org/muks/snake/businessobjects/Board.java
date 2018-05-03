@@ -45,9 +45,8 @@ public class Board {
 
         Cell moveToCell = this.BOARD[nextCell.getRow()][nextCell.getColumn()];
         moveToCell.setPartOfSnakeBody();
-        if (moveToCell.equals(this.FOOD_CELL))
-            moveToCell.isFoodCell();
-
+        if (moveToCell.equals(this.FOOD_CELL) || nextCell.isFoodCell())
+            moveToCell.setFood();
 
         if (!moveToCell.isFoodCell()) {
             Cell snakeTail = this.SNAKE.getTail();
@@ -104,7 +103,7 @@ public class Board {
         StringBuilder board = new StringBuilder();
         int rows = this.BOARD.length;
         int columns = this.BOARD[0].length;
-        board.append("\n>>> Snake board looks like:-");
+
         board.append("\n-----------------------------------------\n");
         for (int r = 0; r < rows; r++) {
             board.append("|");

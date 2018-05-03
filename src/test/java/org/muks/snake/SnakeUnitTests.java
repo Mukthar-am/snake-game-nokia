@@ -23,8 +23,10 @@ import org.testng.annotations.Test;
  * Head of the Snake is marked as H, Body and tail is marked as X
  * Food is indicated by F
  */
-public class SnakeJunitTest {
-    private Logger LOG = LoggerFactory.getLogger(SnakeJunitTest.class);
+public class SnakeUnitTests {
+    private static Logger LOG = LoggerFactory.getLogger("TestLog");
+
+
     private Board BOARD;
     private int SNAKE_START_POS = 0;
     private int SNAKE_END_POS = 0;
