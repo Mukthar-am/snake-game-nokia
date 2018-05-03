@@ -73,7 +73,7 @@ public class Board {
 
     public boolean hasFood() {
         boolean foodFound = (this.FOOD_CELL == null) ? false : true;
-        LOG.info("Food found:- " + foodFound);
+        LOG.info("Food found:- %b", foodFound);
         return foodFound;
     }
 
@@ -81,7 +81,7 @@ public class Board {
     public void generateFood() {
         int row = new Random().nextInt(this.ROWS);
         int column = new Random().nextInt(this.COLS);
-        LOG.info("Generating food at (x,y): (" + row + "," + column + ")");
+        LOG.info("Generating food at (x,y): (%d, %d)", row, column);
 
         this.FOOD_CELL = new Cell(row, column);
 
@@ -91,7 +91,7 @@ public class Board {
     public void generateFood(int row, int column) {
         FOOD_CELL = new Cell(row, column);
 
-        LOG.info("Generating food at (x,y): (" + row + "," + column + ")");
+        LOG.info("Generating food at (x,y): (%d, %d)", row, column);
         this.BOARD[row][column].setFood();
     }
 
