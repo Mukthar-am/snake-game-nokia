@@ -20,7 +20,7 @@
         <logback.version>1.0.7</logback.version>
         <testNg-version>6.10</testNg-version>
         <java.version>1.8</java.version>
-        <surefire.version>2.17</surefire.version>
+        <surefire.version>2.21.0</surefire.version>
         <jacoco.version>0.7.2.201409121644</jacoco.version>
     </properties>
 
@@ -73,55 +73,57 @@
                 <version>${surefire.version}</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>test-suite.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/test-suite.xml</suiteXmlFile>
                     </suiteXmlFiles>
-
+                    <!--<argLine>-Xmx1024m -XX:MaxPermSize=256m</argLine>-->
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco.version}</version>
 
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
 
-                    <execution>
-                        <id>jacoco-check</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <rule implementation="org.jacoco.maven.RuleConfiguration">
-                                    <element>BUNDLE</element>
-                                    <limits>
-                                        <limit implementation="org.jacoco.report.check.Limit">
-                                            <counter>INSTRUCTION</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>0.4</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.jacoco</groupId>-->
+                <!--<artifactId>jacoco-maven-plugin</artifactId>-->
+                <!--<version>${jacoco.version}</version>-->
+
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>default-prepare-agent</id>-->
+                        <!--<goals>-->
+                            <!--<goal>prepare-agent</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                    <!--<execution>-->
+                        <!--<id>default-report</id>-->
+                        <!--<phase>prepare-package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>report</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+
+                    <!--<execution>-->
+                        <!--<id>jacoco-check</id>-->
+                        <!--<phase>test</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>check</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<rules>-->
+                                <!--<rule implementation="org.jacoco.maven.RuleConfiguration">-->
+                                    <!--<element>BUNDLE</element>-->
+                                    <!--<limits>-->
+                                        <!--<limit implementation="org.jacoco.report.check.Limit">-->
+                                            <!--<counter>INSTRUCTION</counter>-->
+                                            <!--<value>COVEREDRATIO</value>-->
+                                            <!--<minimum>0.1</minimum>-->
+                                        <!--</limit>-->
+                                    <!--</limits>-->
+                                <!--</rule>-->
+                            <!--</rules>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
 
 
             <plugin>

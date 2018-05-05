@@ -3,87 +3,24 @@
 This is the same old game which we are aware of during the times of Nokia phone.
   We have a snake which traverses/moves of the game board, starting from the board left-top most corner cell and on its way, keeps find a path to consume the food which is randomly placed at the board.
 
-
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
+    * [JDK-1.8] (oracle JDK) - dev environment
+    * [Maven](https://maven.apache.org/) - Dependency Management
+    and rest of the dependencies are handled in pom.xml
 
-What things you need to install the software and how to install them
-
-```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
+### Building the application jar
+    git clone this repository, locally.
+    mvn clean install (Building the target artifacts along with running Unit tests)
 
 ## Running the tests
+- All the tests are run by TestNG, using the test sute file found at the path <project-root>/src/test/resources/test-suite.xml
+- TestCoverage is enabled using JaCoCo in conjunction with maven-surefire-plugin and is set to very minimal code coverage.
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
+* **Mukthar Ahamed, Maniyar** - *Initial work* - [mukthar-am](https://github.com/mukthar-am)
 
